@@ -1,0 +1,215 @@
+/* Reset CSS pour assurer une base propre */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général pour le corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e5e5e5; /* Fond noir */
+    color: #fff; /* Texte blanc */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh; /* Hauteur minimum de la fenêtre */
+    position: relative; /* Ajout de position relative pour le corps de la page */
+}
+
+/* Header */
+header {
+    background-color: #5f67c6; /* Bleu */
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Pour espacer les éléments */
+    align-items: center; /* Pour aligner verticalement */
+}
+
+header .logo {
+    width: 150px;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Pour pousser vers la droite */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #5f67c6; /* Bleu foncé au survol */
+}
+
+/* Contenu principal */
+main {
+    max-width: 400px; /* Largeur maximale du formulaire */
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style pour les labels et les inputs */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 8px;
+    text-align: left; /* Aligner le texte des labels à gauche */
+    color: #000; /* Couleur du texte noir */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Bouton d'inscription */
+form button[type="submit"] {
+    background-color: #5f67c6; /* Bleu */
+    color: black; /* Couleur du texte noir */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #5f67c6; /* Bleu foncé au survol */
+}
+
+/* Footer */
+footer {
+    background-color: #5f67c6; /* Bleu */
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    main {
+        margin-top: 10px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        width: 100px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+        padding: 8px;
+    }
+
+    form button[type="submit"] {
+        padding: 10px 15px;
+    }
+}

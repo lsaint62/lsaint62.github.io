@@ -1,0 +1,192 @@
+/* style_profile.css */
+
+/* Général */
+body {
+    font-family: 'Times New Roman', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #5f67c6;
+    color: white;
+    padding: 10px 0;
+    display: flex; /* Ajouté */
+    justify-content: space-between; /* Ajouté */
+    align-items: center; /* Ajouté */
+}
+
+header .logo {
+    width: 150px;
+    margin: 0 20px; /* Modifié pour ajouter une marge à gauche et à droite */
+}
+
+nav {
+    margin-right: 20px; /* Ajouté pour ajouter une marge à droite */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Ajouté */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    text-align: center;
+    color: #5f67c6;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #5f67c6;
+    border-bottom: 2px solid #5f67c6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    background-color: #e9e9e9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+section ul li strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+section ul li button {
+    background-color: #5f67c6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section ul li button:hover {
+    background-color: #5f67c6;
+}
+
+section ul li form {
+    display: inline-block;
+}
+
+section ul li form button {
+    margin-right: 10px;
+}
+
+/* Custom button styles */
+button.approve {
+    background-color: #45a049; /* Green */
+}
+
+button.approve:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+button.reject {
+    background-color: #f44336; /* Red */
+}
+
+button.reject:hover {
+    background-color: #e53935; /* Darker red */
+}
+
+footer {
+    background-color: #5f67c6;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Important to push footer to the bottom */
+}
+
+footer p, footer li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Ajouté pour disposer les éléments en colonne sur les petits écrans */
+        align-items: center; /* Modifié pour centrer les éléments */
+    }
+
+    header .logo {
+        width: 120px;
+        margin: 10px 0; /* Modifié pour ajouter une marge en haut et en bas */
+    }
+
+    nav {
+        margin-right: 0; /* Modifié pour supprimer la marge droite sur les petits écrans */
+    }
+
+    nav ul {
+        flex-direction: column; /* Ajouté pour disposer les éléments en colonne sur les petits écrans */
+        align-items: center; /* Ajouté pour centrer les éléments */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section ul li {
+        padding: 10px;
+    }
+}

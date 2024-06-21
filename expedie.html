@@ -1,0 +1,67 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J'expédie - Transportez vos colis avec des voyageurs</title>
+    <link rel="stylesheet" href="style_test1.css">
+</head>
+<body>
+    <header>
+        <a href="test.html">
+            <img src="image.jpg" alt="Logo du site web" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="expedie.php">J'expédie</a></li>
+                <li><a href="annonce_form.php">Je transporte</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profil.php">Profil</a></li>
+                    <li><a href="logout.php">Déconnexion</a></li>
+                <?php else: ?>
+                    <li><a href="test_connexion.html">Connexion</a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Liste des annonces</h1>
+        <section class="recherche">
+            <h2>Filtrer les annonces</h2>
+            <form action="expedie.php" method="get">
+                <label for="origine">Origine:</label>
+                <input type="text" id="origine" name="origine" placeholder="Entrez votre ville">
+
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Entrez votre ville">
+
+                <label for="date_depart">Date de départ:</label>
+                <input type="date" id="date_depart" name="date_depart">
+
+                <label for="date_arrivee">Date d'arrivée:</label>
+                <input type="date" id="date_arrivee" name="date_arrivee">
+
+                <button type="submit">Rechercher</button>
+            </form>
+        </section>
+
+        <section class="annonces">
+            <h2>Dernières annonces</h2>
+            <ul id="annonces-list">
+                <!-- Les annonces seront insérées ici par PHP -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ParticPost</p>
+        <li><a href="#">Comment ça marche ?</a></li>
+        <li><a href="#">Qui sommes-nous?</a></li>
+        <li><a href="#">FAQ</a></li>
+    </footer>
+</body>
+</html>

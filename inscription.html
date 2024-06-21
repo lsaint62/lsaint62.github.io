@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Transportez vos colis avec des voyageurs</title>
+    <link rel="stylesheet" href="inscription.css">
+</head>
+<body>
+    <header>
+        <a href="test.html">
+            <img src="image.jpg" alt="Logo du site web" class="logo">
+        </a>
+        <nav id="nav-menu">
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+            <ul>
+                <li><a href="expedie.php">J'expédie</a></li>
+                <li><a href="annonce_form.php">Je transporte</a></li>
+                <li><a href="test_connexion.html">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Inscription</h1>
+        <form action="traitement_inscription.php" method="post" onsubmit="return validateForm()">
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Téléphone:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm_password">Confirmez le mot de passe:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ParticPost</p>
+        <ul>
+            <li><a href="#">Comment ça marche ?</a></li>
+            <li><a href="#">Qui sommes-nous?</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+            if (password != confirm_password) {
+                alert("Les mots de passe ne correspondent pas.");
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            var navMenu = document.getElementById("nav-menu");
+            var navList = navMenu.querySelector("ul");
+            if (navList.style.display === "block") {
+                navList.style.display = "none";
+            } else {
+                navList.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
